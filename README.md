@@ -23,6 +23,8 @@ smartApi_token = ""
 smartApi_pwd = '' 
 smartApi_username = ''
 
+The smartApi pwd is likely a pin that you have to setup with angle one broking, you may find the username there too (at the login page) and the token from their api page (loads of good youtube videos explaining this)
+
 BSEScripMaster.txt: This file allows for the mapping of company names to their BSE scrips. You may need to update this file every once in a while with the latest versions. You may fetch the latest version on BSE's website as a CSV file and convert it to a text file.
 
 chromedriver.exe: This is the driver for the selenium function that auto logs in to ICICI directly to get the updated session key.
