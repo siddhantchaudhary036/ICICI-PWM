@@ -1,1 +1,9 @@
-
+icici_direct_key = "" 
+icici_direct_secret = "" 
+icici_direct_username = '' #This will likely be your phone number
+icici_direct_totp = '' #You will need to enable 2FA on their website and get the key from there
+icici_direct_pass = '' #This will be the password to login to their website
+smartApi_key = '' 
+smartApi_token = "" 
+smartApi_pwd = '' 
+smartApi_username = ''
