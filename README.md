@@ -2,6 +2,8 @@
 Automating trade execution using broker Angle One API for all intraday order calls/recommendations made by ICICI Direct's I Click2Gain tool.
 For this, you will need to have an account at both ICICI Direct and Angle One. ICICI direct for their recommendations and Angle one for the execution of orders.
 
+All you need to do is update the api_keys file and run the file_run.py on your computer, after this as long as your computer/server is running your orders will automatically keep on getting sent. :)
+
 We have 6 different files:
 
 main.py: (this is where all of the internal logic of connecting to the broker APIs, subscribing to the I-Click-2-Gain WebSocket, and executing orders is done.) This file will execute all intraday equity order calls made by I-Click-2-Gain.
