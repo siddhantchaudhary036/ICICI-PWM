@@ -1,4 +1,4 @@
-SmartApi
+smartapi-python
 pyotp
 pandas
 selenium
