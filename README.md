@@ -6,9 +6,7 @@ All you need to do is update the api_keys file and run the file_run.py on your c
 
 We have 6 different files:
 
-main.py: (this is where all of the internal logic of connecting to the broker APIs, subscribing to the I-Click-2-Gain WebSocket, and executing orders is done.) This file will execute all intraday equity order calls made by I-Click-2-Gain.
-
-file_run.py: (this is the file that manages running and rerunning main.py) This file is required since after 24 hours the ICICI direct session key needs to be updated, the initial_cash variable which shows how much funds are currently available to trade with needs to be updated, this allows us to compound our money. The WebSocket is resubscribed which is necessary else it leads to timeout from the ICICI direct server endpoint.
+main.py: (this is where all of the internal logic of connecting to the broker APIs, subscribing to the I-Click-2-Gain WebSocket, and executing orders is done.) This file will execute all intraday equity order calls made by I-Click-2-Gain. This file will automatically reinitialize everyday at 8AM ist.This is required since after 24 hours the ICICI direct session key needs to be updated, the initial_cash variable which shows how much funds are currently available to trade with needs to be updated, this allows us to compound our money. The WebSocket is resubscribed which is necessary else it leads to timeout from the ICICI direct server endpoint.
 
 Session_key.txt: (this is the file that will contain the recent most copy of your session key from ICICI direct. You may leave this file untouched and empty it will automatically be managed by main.py)
 
