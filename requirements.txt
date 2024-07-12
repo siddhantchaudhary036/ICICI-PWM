@@ -1,0 +1,9 @@
+SmartApi
+pyotp
+pandas
+selenium
+urllib3
+requests
+breeze-connect
+pytz
+logzero
