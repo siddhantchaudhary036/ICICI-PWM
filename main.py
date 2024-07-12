@@ -103,12 +103,6 @@ def login_to_apis():
     return smartApi,breeze,initial_cash
 
 
-smartApi,breeze,initial_cash = login_to_apis()
-breeze.ws_connect()
-ist = pytz.timezone('Asia/Kolkata')
-invest_per_trade = 0.15
-
-
 def map_security_to_standard_format(stock_name):
     '''Finds the standard format ticker symbol for the given stock name'''
     stock_name_lower = stock_name.lower()
@@ -343,9 +337,24 @@ def on_ticks(ticks):
                 
 
 
+ist = pytz.timezone('Asia/Kolkata')
+invest_per_trade = 0.15
+start_time = datetime.now(ist).replace(hour=10,minute=29,second=0,microsecond=0)
 # Assign the callbacks.
-breeze.on_ticks = on_ticks
-# subscribe order notification feeds(it will connect to order streaming server)
-breeze.subscribe_feeds(get_order_notification=True)
-breeze.subscribe_feeds(stock_token = "i_click_2_gain")
-print('subscribed')
+
+while True:
+    if datetime.now(ist)>start_time:
+        smartApi,breeze,initial_cash = login_to_apis()
+        breeze.ws_connect()
+        breeze.on_ticks = on_ticks
+        # subscribe order notification feeds(it will connect to order streaming server)
+        breeze.subscribe_feeds(get_order_notification=True)
+        breeze.subscribe_feeds(stock_token = "i_click_2_gain")
+        print('subscribed')
+        end_time = datetime.now(ist).replace(hour=4,minute=0,second=0,microsecond=0)
+        while True:
+            if datetime.now(ist)>end_time:
+                start_time += timedelta(days=1) 
+                break
+            x=1
+    
