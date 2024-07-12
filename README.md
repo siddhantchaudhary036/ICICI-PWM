@@ -25,4 +25,6 @@ The smartApi pwd is likely a pin that you have to setup with angle one broking, 
 
 BSEScripMaster.txt: This file allows for the mapping of company names to their BSE scrips. You may need to update this file every once in a while with the latest versions. You may fetch the latest version on BSE's website as a CSV file and convert it to a text file.
 
+chromedriver: if you are running this on a windows system, paste chromedriver.exe in your directory, if its in a linux server use just the chromedriver file. change the path for the driver in main.py accordingly, if you are running this in  a linux server remember to first install google chrome and all required dependencies.  
+
 chromedriver.exe: This is the driver for the selenium function that auto logs in to ICICI directly to get the updated session key.
