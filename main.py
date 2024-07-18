@@ -338,11 +338,12 @@ def on_ticks(ticks):
 
 
 ist = pytz.timezone('Asia/Kolkata')
-invest_per_trade = 0.15
-start_time = datetime.now(ist).replace(hour=10,minute=29,second=0,microsecond=0)
+invest_per_trade = 0.25
+start_time = datetime.now(ist).replace(hour=9,minute=15,second=1,microsecond=0)
 # Assign the callbacks.
 
 while True:
+    time.sleep(1) # To lower CPU stress
     if datetime.now(ist)>start_time:
         smartApi,breeze,initial_cash = login_to_apis()
         breeze.ws_connect()
@@ -351,10 +352,12 @@ while True:
         breeze.subscribe_feeds(get_order_notification=True)
         breeze.subscribe_feeds(stock_token = "i_click_2_gain")
         print('subscribed')
-        end_time = datetime.now(ist).replace(hour=4,minute=0,second=0,microsecond=0)
+        end_time = datetime.now(ist).replace(hour=16,minute=0,second=0,microsecond=0)
         while True:
             if datetime.now(ist)>end_time:
                 start_time += timedelta(days=1) 
+                breeze.unsubscribe_feeds(stock_token = "i_click_2_gain")
+                breeze.ws_disconnect()
                 break
             x=1
     
