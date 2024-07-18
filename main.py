@@ -12,6 +12,8 @@ import json
 import time
 from breeze_connect import BreezeConnect
 from datetime import datetime, timedelta
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 import pytz
 from api_keys import icici_direct_key,icici_direct_secret,smartApi_key,icici_direct_totp,icici_direct_username,icici_direct_pass,smartApi_pwd,smartApi_token,smartApi_username
 
@@ -24,8 +26,15 @@ def autologin():
     API_KEY = icici_direct_key
     url = "https://api.icicidirect.com/apiuser/login?api_key="+urllib.parse.quote_plus(API_KEY)
     driver_path = 'chromedriver.exe'
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--remote-debugging-port=9222")
+
     service = Service(executable_path = driver_path)
     browser = webdriver.Chrome(service = service)
+
     browser.get(url)
     time.sleep(1)
 
