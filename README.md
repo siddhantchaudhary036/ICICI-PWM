@@ -28,3 +28,5 @@ BSEScripMaster.txt: This file allows for the mapping of company names to their B
 chromedriver: if you are running this on a windows system, paste chromedriver.exe in your directory, if its in a linux server use just the chromedriver file. change the path for the driver in main.py accordingly, if you are running this in  a linux server remember to first install google chrome and all required dependencies.  
 
 chromedriver.exe: This is the driver for the selenium function that auto logs in to ICICI directly to get the updated session key.
+you may also need to use the 'chromedriver' file instead of 'chromedriver.exe' if you are on ubuntu like I was.
+(you may also need to setup swap space if your ubuntu server has little RAM like mine did.)
