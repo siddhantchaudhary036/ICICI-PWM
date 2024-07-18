@@ -25,7 +25,7 @@ def autologin():
 
     API_KEY = icici_direct_key
     url = "https://api.icicidirect.com/apiuser/login?api_key="+urllib.parse.quote_plus(API_KEY)
-    driver_path = 'chromedriver.exe'
+    driver_path = 'chromedriver.exe' # make this '/your_user/your_directory/ICICI-PWM/chromedriver' if you are using a ubuntu server (you may also need to setup swap space if your ubuntu server has little RAM like mine did.)
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--no-sandbox")
